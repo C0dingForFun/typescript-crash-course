@@ -85,3 +85,19 @@ const results1 = addTogether('hello');
 const results2 = addTogether(3);
 // useful when migrating from js to ts
 // because using any won't cause errors initially
+// Tuples
+let person1 = ['mario', 30, true];
+// Tuple examples
+let hsla;
+hsla = [200, '100%', '50%', 1];
+let xy;
+xy = [94.7, 20.1];
+function useCoords() {
+    //get coords
+    const lat = 100;
+    const long = 50;
+    return [lat, long];
+}
+const [lat, long] = useCoords();
+// Named Tuples
+// let user: [string, number]
