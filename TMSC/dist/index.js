@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 // Type Basics
 let age = 30;
 let firstName = 'Mario';
@@ -17,3 +17,4 @@ let something;
 let anotherThing;
 something = null;
 anotherThing = undefined;
+console.log('Hello World');
