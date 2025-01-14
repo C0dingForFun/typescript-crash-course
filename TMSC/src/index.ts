@@ -69,7 +69,7 @@ person.score = 40;
 
 const score = person.score;
 
-//Functions
+// Functions
 
 function addTwoNumbers(a:number, b:number): number{
     return a + b;

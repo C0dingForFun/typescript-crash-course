@@ -45,7 +45,7 @@ let person = {
 person.name = 'Bowser';
 person.score = 40;
 const score = person.score;
-//Functions
+// Functions
 function addTwoNumbers(a, b) {
     return a + b;
 }
