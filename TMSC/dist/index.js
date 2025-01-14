@@ -66,3 +66,22 @@ function formatGreeting(name, greeting) {
 const result = formatGreeting('Mario', 'Hello');
 console.log(result);
 // Any Type
+let myAge;
+let title;
+myAge = 19;
+myAge = false;
+title = 25;
+title = {
+    hello: 'World'
+};
+// Any Type in arrays
+let stuff = ['hello', true, 30, null];
+stuff.push({ id: 123 });
+// Functions with Any Type
+function addTogether(value) {
+    return value + value;
+}
+const results1 = addTogether('hello');
+const results2 = addTogether(3);
+// useful when migrating from js to ts
+// because using any won't cause errors initially
