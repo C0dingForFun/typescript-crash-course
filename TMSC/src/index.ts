@@ -267,14 +267,58 @@ anotherId = 5;
 
 // Union Type pitfalll
 
-function swapIdType(id: Id): Id{
+// function swapIdType(id: Id): Id{
     // can only use props and methods common to 
     // both number and string types
     // parseInt(id) --> not allowed
 
-    return id;
+//     return id;
+// }
+
+// swapIdType(5);
+
+// -----------------------------------------------------------------
+// Type Guards
+
+type Id2 = number | string;
+
+function swapIdType(id: Id2){
+    if(typeof id === 'string'){
+        // can use string methods
+        return parseInt(id)
+    } else {
+        // can use number methods and properties
+        return id.toString()
+    }
 }
 
-swapIdType(5);
+const idOne = swapIdType(1);
+const idTwo = swapIdType('2');
 
+console.log(idOne, idTwo);
+
+// Tagged Interfaces
+
+interface NewUser {
+    type: 'user'
+    username: string
+    email: string
+    id: Id2
+}
+
+interface NewPerson {
+    type: 'person'
+    firstname: string 
+    age: number
+    id: Id2
+}
+
+function loginDetails(value: NewUser | NewPerson): void {
+    if(value.type === 'user'){
+        console.log(value.email, value.username);        
+    }
+    if(value.type === 'person'){
+        console.log(value.firstname, value.age)
+    }
+}
 
