@@ -18,6 +18,7 @@ let anotherThing;
 something = null;
 anotherThing = undefined;
 console.log('Hello');
+// -------------------------------------------------------------
 // Arrays
 let names = ['Mario', 'Luigi', 'Peach'];
 let ages = [25, 28, 24];
@@ -45,6 +46,7 @@ let person = {
 person.name = 'Bowser';
 person.score = 40;
 const score = person.score;
+// -----------------------------------------------------------------
 // Functions
 function addTwoNumbers(a, b) {
     return a + b;
@@ -65,6 +67,7 @@ function formatGreeting(name, greeting) {
 }
 const result = formatGreeting('Mario', 'Hello');
 console.log(result);
+// -------------------------------------------------------------------
 // Any Type
 let myAge;
 let title;
@@ -85,6 +88,7 @@ const results1 = addTogether('hello');
 const results2 = addTogether(3);
 // useful when migrating from js to ts
 // because using any won't cause errors initially
+// -------------------------------------------------------------
 // Tuples
 let person1 = ['mario', 30, true];
 // Tuple examples
@@ -100,4 +104,23 @@ function useCoords() {
 }
 const [lat, long] = useCoords();
 // Named Tuples
-// let user: [string, number]
+let user1;
+user1 = ['peach', 25];
+console.log(user1[0]);
+const authorOne = { name: 'mario', avatar: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Ffree-png-hjsjt&psig=AOvVaw3G9sR2PlX2zjSqteYlzyLM&ust=1737008808224000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIj-j6CM94oDFQAAAAAdAAAAABAJ' };
+const newPost = {
+    title: 'My first post',
+    body: 'something interesting',
+    tags: ['gaming, tech'],
+    create_at: new Date(),
+    author: authorOne
+};
+// as function argument types
+function createPost(post) {
+    console.log(`Create post ${post.title} by ${post.author.name} `);
+}
+createPost(newPost);
+// with arrays
+let posts = [];
+posts.push(newPost);
+console.log(posts);
