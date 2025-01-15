@@ -208,7 +208,7 @@ posts.push(newPost);
 
 console.log(posts);
 
-// ------------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Type Aliases
 
 // example 1 - tuple
@@ -242,4 +242,12 @@ function formatUser(user: User): void{
 }
 
 formatUser(firstUser);
-formatUser({name: 'Yoshi', score: 100})
+formatUser({name: 'Yoshi', score: 100});
+
+// --------------------------------------------------------------------
+// Union Types
+
+
+
+
+

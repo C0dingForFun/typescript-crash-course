@@ -139,3 +139,5 @@ function formatUser(user) {
 }
 formatUser(firstUser);
 formatUser({ name: 'Yoshi', score: 100 });
+// --------------------------------------------------------------------
+// Union Types
