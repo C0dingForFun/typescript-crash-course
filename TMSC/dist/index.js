@@ -124,3 +124,18 @@ createPost(newPost);
 let posts = [];
 posts.push(newPost);
 console.log(posts);
+function getRandomColour() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return [r, g, b];
+}
+const colourOne = getRandomColour();
+const colourTwo = getRandomColour();
+console.log(colourOne, colourTwo);
+const firstUser = { name: 'mario', score: 75 };
+function formatUser(user) {
+    console.log(`${user.name} has a score of ${user.score}.`);
+}
+formatUser(firstUser);
+formatUser({ name: 'Yoshi', score: 100 });

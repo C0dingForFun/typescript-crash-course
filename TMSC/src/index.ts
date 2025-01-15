@@ -140,7 +140,7 @@ let person1: [string, number, boolean] = ['mario', 30, true];
 
 // Tuple examples
 
-let hsla : [number, string, string, number]
+let hsla : [number, string, string, number];
 
 hsla = [200, '100%', '50%', 1];
 
@@ -153,7 +153,7 @@ function useCoords():[number, number]{
     const lat = 100;
     const long = 50;
 
-    return [lat, long]
+    return [lat, long];
 }
 
 const [lat, long] = useCoords();
@@ -204,6 +204,42 @@ createPost(newPost);
 
 let posts: Post[] = [];
 
-posts.push(newPost)
+posts.push(newPost);
 
 console.log(posts);
+
+// ------------------------------------------------------------------------
+// Type Aliases
+
+// example 1 - tuple
+
+type Rgb = [number, number, number];
+
+function getRandomColour(): Rgb{
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+
+    return [r, g, b];
+}
+
+const colourOne = getRandomColour();
+const colourTwo = getRandomColour();
+
+console.log(colourOne, colourTwo);
+
+// Example 2 - object literals
+
+type User = {
+    name: string
+    score: number
+}
+
+const firstUser: User = {name: 'mario', score: 75};
+
+function formatUser(user: User): void{
+    console.log(`${user.name} has a score of ${user.score}.`);
+}
+
+formatUser(firstUser);
+formatUser({name: 'Yoshi', score: 100})
