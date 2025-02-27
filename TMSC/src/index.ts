@@ -1,4 +1,4 @@
-// Type Basics
+// Type Basics | Primitive Types
 
 let age:number = 30;
 let firstName:string = 'Mario';
@@ -55,7 +55,7 @@ let user: { firstName: string, age: number, id: number} = {
     id: 1
 }
 
-user.firstName = 'Paach';
+user.firstName = 'Peach';
 user.id = 2;
 
 // Type inference with object literals
@@ -134,7 +134,7 @@ const results2 = addTogether(3);
 // because using any won't cause errors initially
 
 // -------------------------------------------------------------
-// Tuples
+// Tuples - is an array with fixed size and known datatypes.
 
 let person1: [string, number, boolean] = ['mario', 30, true];
 
@@ -209,14 +209,14 @@ posts.push(newPost);
 console.log(posts);
 
 // ---------------------------------------------------------------------
-// Type Aliases
+// Type Aliases - allow you to create custom names for complex types, making your code more readable and maintainable.
 
 // example 1 - tuple
 
 type Rgb = [number, number, number];
 
 function getRandomColour(): Rgb{
-    const r = Math.floor(Math.random() * 255);
+    const r = Math.floor(Math.random() * 255); // floor() - Round numbers down to the nearest integer
     const g = Math.floor(Math.random() * 255);
     const b = Math.floor(Math.random() * 255);
 
@@ -245,7 +245,7 @@ formatUser(firstUser);
 formatUser({name: 'Yoshi', score: 100});
 
 // --------------------------------------------------------------------
-// Union Types
+// Union Types - is a type of variable that can be assigned more than one type.
 
 let someId: number | string;
 
@@ -321,4 +321,42 @@ function loginDetails(value: NewUser | NewPerson): void {
         console.log(value.firstname, value.age)
     }
 }
+
+
+// ----------------------------------------------------------------
+// Enums - allow you to define or declare a collection of related values, that can be numbers or strings, as a set of named constants.
+
+// enum ResourceType {
+//     BOOK,
+//     AUTHOR, 
+//     FILM,
+//     DIRECTOR, 
+//     PERSON,
+// }
+
+// console.log(ResourceType.BOOK); // 0 
+// console.log(ResourceType.AUTHOR); // 1
+
+// To start from 1
+enum ResourceType{
+    BOOK = 1,
+    AUTHOR, 
+    FILM,
+    DIRECTOR, 
+    PERSON,
+}
+
+console.log(ResourceType.BOOK); // 1
+console.log(ResourceType.AUTHOR); // 2
+
+// They can also be stored as strings
+enum Direction {
+    Up = 'Up',
+    Right = 'Right',
+    Down = 'Down',
+    Left = 'Left'
+}
+
+console.log(Direction.Right); // Right
+console.log(Direction.Down); // Down
 
