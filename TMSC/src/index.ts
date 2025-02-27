@@ -359,4 +359,3 @@ enum Direction {
 
 console.log(Direction.Right); // Right
 console.log(Direction.Down); // Down
-
